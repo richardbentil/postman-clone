@@ -16,7 +16,7 @@ function Form({
   tab,
   urlSuggestions,
   setUrlSuggestions,
-  host
+  host,
 }: any) {
   useEffect(() => {
     const savedUrls = localStorage.getItem("savedUrls");
@@ -51,7 +51,7 @@ function Form({
           </div>
           <div className="form-group col-8">
             <label>URL:</label>
-           <span className="small text-muted"> {host}</span>
+            <span className="small text-muted"> {host}</span>
             <input
               type="text"
               value={url}
@@ -61,14 +61,18 @@ function Form({
               list="urlSuggestions"
             />
             <datalist id="urlSuggestions">
-              {urlSuggestions.map((urlSuggestion: any, index: number) => (
-                <option key={index} value={urlSuggestion} />
+              {urlSuggestions.map((urlSuggestion: any) => (
+                <option key={urlSuggestion} value={urlSuggestion} />
               ))}
             </datalist>
           </div>
 
           <div className="col-2 mt-4 text-end">
-            <button type="submit" className="btn btn-primary" disabled={!bearerToken}>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              disabled={!bearerToken}
+            >
               Send Request
             </button>
           </div>
@@ -76,7 +80,7 @@ function Form({
       )}
 
       {tab == "authorization" && (
-       <Token bearerToken={bearerToken} setBearerToken={setBearerToken} />
+        <Token bearerToken={bearerToken} setBearerToken={setBearerToken} />
       )}
       {tab == "body" && (
         <div className="form-group">
