@@ -1,0 +1,13 @@
+@import "./base/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "./partials/colors";
+@import "./partials/icons";
+
+nav .nav-link {
+    color: black !important;
+}
+
+nav .nav-link .active {
+    color: blue v;
+}
+
