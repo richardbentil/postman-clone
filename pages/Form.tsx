@@ -71,7 +71,6 @@ function Form({
             <button
               type="submit"
               className="btn btn-primary"
-              disabled={!bearerToken}
             >
               Send Request
             </button>
